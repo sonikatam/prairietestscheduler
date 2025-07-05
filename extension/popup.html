@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrairieTest Monitor</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🎯 PrairieTest Monitor</h1>
+        <p class="subtitle">Get notified when exam slots become available</p>
+      </header>
+
+      <div class="status-section">
+        <div class="status-indicator" id="statusIndicator">
+          <span class="status-dot" id="statusDot"></span>
+          <span class="status-text" id="statusText">Checking...</span>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>📅 Monitor Settings</h3>
+
+        <div class="form-group">
+          <label for="desiredDate">Desired Date:</label>
+          <input
+            type="date"
+            id="desiredDate"
+            placeholder="Leave empty for any date"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="desiredTime">Desired Time:</label>
+          <input
+            type="time"
+            id="desiredTime"
+            placeholder="Leave empty for any time"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="desiredLocation">Location (optional):</label>
+          <input
+            type="text"
+            id="desiredLocation"
+            placeholder="e.g., Main Testing Center"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="checkInterval">Check Every:</label>
+          <select id="checkInterval">
+            <option value="1">1 minute</option>
+            <option value="2">2 minutes</option>
+            <option value="5" selected>5 minutes</option>
+            <option value="10">10 minutes</option>
+            <option value="15">15 minutes</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="notificationEmail">Email for notifications:</label>
+          <input
+            type="email"
+            id="notificationEmail"
+            placeholder="your.email@school.edu"
+          />
+        </div>
+      </div>
+
+      <div class="button-section">
+        <button id="startMonitoring" class="btn btn-primary">
+          🚀 Start Monitoring
+        </button>
+        <button
+          id="stopMonitoring"
+          class="btn btn-secondary"
+          style="display: none"
+        >
+          ⏹️ Stop Monitoring
+        </button>
+      </div>
+
+      <div class="info-section">
+        <h3>ℹ️ How it works</h3>
+        <ul>
+          <li>✅ Automatically detects when you're logged into PrairieTest</li>
+          <li>🔍 Monitors the scheduling page for available slots</li>
+          <li>📧 Sends email notifications when slots match your criteria</li>
+          <li>⚙️ Runs in the background while you browse</li>
+        </ul>
+      </div>
+
+      <div class="log-section">
+        <h3>📋 Recent Activity</h3>
+        <div id="activityLog" class="log-container">
+          <p class="log-placeholder">No activity yet...</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
